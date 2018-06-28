@@ -718,7 +718,7 @@ PlayerSettings:
   facebookSdkVersion: 7.9.4
   apiCompatibilityLevel: 2
   cloudProjectId: 72110ebb-6016-488c-88fc-29a5b4367732
-  projectName: 
+  projectName: RoomSimulator
   organizationId: archylles
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
