@@ -1,47 +1,16 @@
 fileFormatVersion: 2
-guid: ea506d3264eb89349b1b57e9a7b0a337
+guid: 50a66d937d6d6c948a10837a13355a69
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: mesh_109348065
-    100002: mesh_43897309
-    100004: mesh_479011742
-    100006: mesh_720497553
-    100008: mesh_840136730
-    100010: mesh_870911234
-    100012: //RootNode
-    400000: mesh_109348065
-    400002: mesh_43897309
-    400004: mesh_479011742
-    400006: mesh_720497553
-    400008: mesh_840136730
-    400010: mesh_870911234
-    400012: //RootNode
-    2100000: material_23___2761
-    2300000: mesh_109348065
-    2300002: mesh_43897309
-    2300004: mesh_479011742
-    2300006: mesh_720497553
-    2300008: mesh_840136730
-    2300010: mesh_870911234
-    3300000: mesh_109348065
-    3300002: mesh_43897309
-    3300004: mesh_479011742
-    3300006: mesh_720497553
-    3300008: mesh_840136730
-    3300010: mesh_870911234
-    4300000: mesh_870911234
-    4300002: mesh_720497553
-    4300004: mesh_109348065
-    4300006: mesh_479011742
-    4300008: mesh_43897309
-    4300010: mesh_840136730
-    6400000: mesh_109348065
-    6400002: mesh_43897309
-    6400004: mesh_479011742
-    6400006: mesh_720497553
-    6400008: mesh_840136730
-    6400010: mesh_870911234
+    100000: //RootNode
+    100002: ComputerMouse_mesh
+    400000: //RootNode
+    400002: ComputerMouse_mesh
+    2100000: ComputerMouse_mat1
+    2300000: ComputerMouse_mesh
+    3300000: ComputerMouse_mesh
+    4300000: ComputerMouse_mesh
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -75,7 +44,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 1
+    addColliders: 0
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
