@@ -15,7 +15,6 @@
 
 		public override void StartUsing(VRTK_InteractUse usingObject)
 		{
-			Debug.Log ("I am using!");
 			base.StartUsing(usingObject);
 			toggleRope ();
 		}
@@ -23,18 +22,15 @@
 		public void toggleRope() {
 			GameObject ropeObj = transform.Find("rope").gameObject;
 			if (ropeObj) {
-				Debug.Log ("Found the rope on this stanchion!");
 				if (!ropeIsOn) {
-					Debug.Log ("rope on!");
 					ropeObj.SetActive (true);
 					ropeIsOn = true;
 				} else {
-					Debug.Log ("rope off!");
 					ropeObj.SetActive(false);
 					ropeIsOn = false;
 				}
 			} else {
-				Debug.Log ("Attempted to toggle but rope was not found.");
+				Debug.Log ("Attempted to toggle stanchion but rope was not found.");
 			}
 
 		}
