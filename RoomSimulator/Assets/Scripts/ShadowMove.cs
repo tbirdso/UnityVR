@@ -2,6 +2,8 @@
  * Written by Tom Birdsong
  * Last Updated 7/22/2018
  * For use by the Clemson University Virtual Reality Club
+ *  
+ * ShadowMode informed by shadowController object
  */
 
 namespace VRTK {
@@ -10,6 +12,37 @@ namespace VRTK {
 	using UnityEngine;
 
 	public class ShadowMove : VRTK_InteractableObject {
+
+		//If shadowMode is false object should behave as normal interactable object
+		//If shadowMode is true object should snap to XZ plane and display as shadow on move
+		private bool shadowMode = true;
+
+		public bool ShadowMode
+		{
+			get {
+				return shadowMode;
+			}
+			set {
+				Debug.Log ("Setting to " + value);
+				if (value != shadowMode) {
+					if (value == true) {
+
+						//TODO: save rigidbody presets
+
+						Destroy(transform.GetComponent<Rigidbody> ());
+
+						shadowMode = true;
+
+					} else {
+
+						transform.gameObject.AddComponent<Rigidbody> ();
+
+						shadowMode = false;
+
+					}
+				}
+			}
+		}
 
 		//Shadow component to be displayed only while object is grabbed, must be child of current object
 		public Transform InteractShadow;
@@ -31,7 +64,7 @@ namespace VRTK {
 		new void Update () {
 			base.Update ();
 
-			if (InteractShadow.gameObject.activeSelf == true) {
+			if (shadowMode && InteractShadow.gameObject.activeSelf == true) {
 				shadowFollow ();
 			}
 		}
@@ -39,13 +72,19 @@ namespace VRTK {
 		public override void Grabbed(VRTK_InteractGrab usingObject)
 		{
 			base.Grabbed(usingObject);
-			makeShadow ();
+
+			if (shadowMode) {
+				makeShadow ();
+			}
 		}
 
 		public override void Ungrabbed(VRTK_InteractGrab usingObject)
 		{
 			base.Ungrabbed (usingObject);
-			makeVisible ();
+
+			if (shadowMode) {
+				makeVisible ();
+			}
 		}
 
 		//When grabbed, deactivate all subcomponents and then render designated shadow
@@ -75,6 +114,10 @@ namespace VRTK {
 			if (transform.position.y != initPosY) {
 				transform.position = new Vector3 (transform.position.x, initPosY, transform.position.z);
 			}
+		}
+
+		public static void setShadowMode(bool mode) {
+
 		}
 	}
 }
